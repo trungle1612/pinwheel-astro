@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 astro dev",
-    "build": "astro build",
+    "build": "NODE_TLS_REJECT_UNAUTHORIZED=0 astro build",
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier -w ."
@@ -30,7 +30,7 @@
     "react-dom": "^19.0.0",
     "react-feather": "^2.0.10",
     "react-icons": "^5.5.0",
-    "react-lite-youtube-embed": "^2.4.0",
+    "react-lite-youtube-embed": "^2.5.1",
     "react-youtube": "^10.1.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
