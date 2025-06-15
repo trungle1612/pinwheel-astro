@@ -7,7 +7,7 @@ image: ""
 buttons:
   - label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
   - label: Learn More
     link: "#"
     outline: true
@@ -46,7 +46,7 @@ features:
   button:
     label: Download The Theme
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    enable: false
   features_list:
     - title: Accessibility
       content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
