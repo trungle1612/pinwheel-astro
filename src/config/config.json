@@ -2,8 +2,8 @@
   "site": {
     "title": "Pinwheel Astro",
     "base_url": "https://trungle1612.github.io",
-    "base_path": "/pinwheel-astro/",
-    "trailing_slash": false,
+    "base_path": "/pinwheel-astro",
+    "trailing_slash": true,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
     "logo_width": "147",
