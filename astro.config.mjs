@@ -11,7 +11,7 @@ import config from "./src/config/config.json";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://trungle1612.github.io',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   vite: { 
     plugins: [tailwindcss()],
     optimizeDeps: {
