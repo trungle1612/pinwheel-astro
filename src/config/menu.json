@@ -15,6 +15,22 @@
     {
       "name": "Contact",
       "url": "/contact"
+    },
+    {
+      "name": "Language",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "vi",
+          "url": "/vi"
+        },
+
+        {
+          "name": "ja",
+          "url": "/ja"
+        }
+      ]
     }
   ],
 

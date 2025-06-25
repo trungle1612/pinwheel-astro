@@ -57,20 +57,22 @@ const { Content } = await render(post);
               )
             }
 
-            <li class="mr-4 inline-block">
-              <FaRegFolder className={"mr-2 -mt-1 inline-block"} />
-              {
-                post.data.categories.map((category, index) => (
-                  <a
-                    href={`/categories/${slugify(category)}`}
-                    class="hover:text-primary"
-                  >
-                    {humanize(category)}
-                    {index !== post.data.categories.length - 1 && ","}
-                  </a>
-                ))
-              }
-            </li>
+            {
+              false && (
+                <li class="mr-4 inline-block">
+                  <FaRegFolder className={"mr-2 -mt-1 inline-block"} />
+                  {post.data.categories.map((category, index) => (
+                    <a
+                      href={`/categories/${slugify(category)}`}
+                      class="hover:text-primary"
+                    >
+                      {humanize(category)}
+                      {index !== post.data.categories.length - 1 && ","}
+                    </a>
+                  ))}
+                </li>
+              )
+            }
           </ul>
         </div>
 
