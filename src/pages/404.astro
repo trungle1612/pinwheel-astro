@@ -1,9 +1,12 @@
 ---
+import { changeLanguage } from "i18next";
 import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getEntry, render } from "astro:content";
+
+changeLanguage("vi");
 
 const entry = (await getEntry("pages", "404")) as CollectionEntry<"pages">;
 const { Content } = await render(entry);

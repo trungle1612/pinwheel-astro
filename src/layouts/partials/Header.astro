@@ -1,6 +1,8 @@
 ---
 import Logo from "@/components/Logo.astro";
 import menu from "@/config/menu.json";
+import menuJa from "@/config/menu-ja.json";
+import i18next, { t } from "i18next";
 
 export interface ChildNavigationLink {
   name: string;
@@ -14,7 +16,9 @@ export interface NavigationLink {
   children?: ChildNavigationLink[];
 }
 
-const { main }: { main: NavigationLink[] } = menu;
+const mainMenu = i18next.language === "ja" ? menuJa : menu;
+
+const { main }: { main: NavigationLink[] } = mainMenu;
 const { pathname } = Astro.url;
 ---
 

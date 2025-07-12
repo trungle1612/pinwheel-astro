@@ -1,4 +1,5 @@
 ---
+import { changeLanguage } from "i18next";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import CounterComponent from "@/components/about/CounterComponent.astro";
@@ -9,11 +10,13 @@ import Base from "@/layouts/Base.astro";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
+changeLanguage("vi");
+
 const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
 const { counter, gallery, features, members } = about.data;
 const page_data = {
-  ...about.data,
-  content: about.body,
+    ...about.data,
+    content: about.body,
 };
 ---
 

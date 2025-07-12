@@ -3,9 +3,12 @@ import Logo from "@/components/Logo.astro";
 import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
+import menuJa from "@/config/menu-ja.json";
 import social from "@/config/social.json";
 import { markdownify } from "@/lib/utils/textConverter";
-const { footer } = menu;
+import i18next from "i18next";
+
+const { footer } = i18next.language === "ja" ? menuJa : menu;
 const { copyright, location, email, phone, footer_description } = config.params;
 ---
 

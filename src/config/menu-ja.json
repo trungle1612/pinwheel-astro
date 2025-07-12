@@ -1,0 +1,54 @@
+{
+  "main": [
+    {
+      "name": "ホーム",
+      "url": "/ja"
+    },
+    {
+      "name": "私たちについて",
+      "url": "/ja/about"
+    },
+    {
+      "name": "ポートフォリオ",
+      "url": "/ja/portfolio"
+    },
+    {
+      "name": "お問い合わせ",
+      "url": "/ja/contact"
+    },
+    {
+      "name": "言語",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "ベトナム語",
+          "url": "/"
+        },
+        {
+          "name": "日本語",
+          "url": "/ja"
+        }
+      ]
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "私たちについて",
+      "url": "/ja/about"
+    },
+    {
+      "name": "お問い合わせ",
+      "url": "/ja/contact"
+    },
+    {
+      "name": "要素",
+      "url": "/ja/elements"
+    },
+    {
+      "name": "変更履歴",
+      "url": "/ja/changelog"
+    }
+  ]
+}

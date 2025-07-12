@@ -7,6 +7,8 @@ import { defineConfig } from "astro/config";
 import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
+import astroI18next from "astro-i18next";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,6 +42,7 @@ export default defineConfig({
       ],
     }),
     mdx(),
+    astroI18next(),
   ],
   markdown: {
     remarkPlugins: [

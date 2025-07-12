@@ -1,5 +1,5 @@
 ---
-
+import { changeLanguage } from "i18next";
 import Portfolio from "@/components/Portfolio.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
@@ -11,22 +11,22 @@ import { sortByDate } from "@/lib/utils/sortFunctions";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
-export async function getStaticPaths() {
-  const posts = await getSinglePage("portfolio");
-  const totalPages = Math.ceil(posts.length / config.settings.pagination);
-  const paths = [];
+changeLanguage("vi");
 
-  for (let i = 1; i < totalPages; i++) {
-    paths.push({
-      params: {
-        slug: (i + 1).toString(),
-      },
-    });
-  }
-  return paths;
+export async function getStaticPaths() {
+    const posts = await getSinglePage("portfolio");
+    const totalPages = Math.ceil(posts.length / config.settings.pagination);
+    const paths = [];
+    for (let i = 1; i < totalPages; i++) {
+        paths.push({
+            params: {
+                slug: (i + 1).toString(),
+            },
+        });
+    }
+    return paths;
 }
 const portfolioIndex = (await getEntry("portfolio", "-index")) as CollectionEntry<"portfolio">;
-
 const { slug } = Astro.params;
 const posts = await getSinglePage("portfolio");
 const sortedPosts = sortByDate(posts);
@@ -37,8 +37,8 @@ const indexOfLastPost = currentPage * config.settings.pagination;
 const indexOfFirstPost = indexOfLastPost - config.settings.pagination;
 const currentPosts = recentPost.slice(indexOfFirstPost, indexOfLastPost);
 const page_data = {
-  index_title: portfolioIndex.data.title,
-  slug: `page / ${slug}`,
+    index_title: portfolioIndex.data.title,
+    slug: `page / ${slug}`,
 };
 ---
 
