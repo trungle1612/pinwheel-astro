@@ -9,7 +9,7 @@ import { getEntry } from "astro:content";
 
 changeLanguage("ja");
 
-const entry = (await getEntry("contact", "-index")) as CollectionEntry<"contact">;
+const entry = (await getEntry("contact", "-index_ja")) as CollectionEntry<"contact">;
 const { contact_form_action } = config.params;
 const contact = entry.data;
 const page_data = {

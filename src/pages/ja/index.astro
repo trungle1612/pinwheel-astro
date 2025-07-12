@@ -11,7 +11,8 @@ import { getEntry } from "astro:content";
 
 changeLanguage("ja");
 
-const homepage = (await getEntry("homepage", "-index")) as CollectionEntry<"homepage">;
+const homepage = (await getEntry("homepage", "-index_ja")) as CollectionEntry<"homepage">;
+console.log("homepage", homepage);
 const { banner, key_features, service, testimonial } = homepage.data;
 ---
 

@@ -12,7 +12,7 @@ import { getEntry } from "astro:content";
 
 changeLanguage("ja");
 
-const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
+const about = (await getEntry("about", "-index_ja")) as CollectionEntry<"about">;
 const { counter, gallery, features, members } = about.data;
 const page_data = {
     ...about.data,
