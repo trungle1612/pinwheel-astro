@@ -451,14 +451,8 @@ const pagesCollection = defineCollection({
 export const collections = {
   homepage: homepageCollection,
   about: aboutCollection,
-  blog: blogCollection,
   portfolio: portfolioCollection,
   portfolioJa: portfolioJaCollection,
-  features: featuresCollection,
-  "how-it-works": howItWorksCollection,
   contact: contactCollection,
-  careers: careersCollection,
-  integrations: integrationsCollection,
-  pricing: pricingCollection,
   pages: pagesCollection,
 };
