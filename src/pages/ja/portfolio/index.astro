@@ -16,8 +16,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 changeLanguage("ja");
 
-const portfolioIndex = (await getEntry("portfolio", "-index")) as CollectionEntry<"portfolio">;
-const posts = await getSinglePage("portfolio");
+const portfolioIndex = (await getEntry("portfolio", "-index_ja")) as CollectionEntry<"portfolio">;
+const posts = await getSinglePage("portfolioJa");
 const sortedPosts = sortByDate(posts);
 const featuredPost = sortedPosts.filter((item) => item.data.featured);
 const recentPost = sortedPosts.filter((item) => !item.data.featured);

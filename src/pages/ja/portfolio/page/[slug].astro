@@ -14,7 +14,7 @@ import { getEntry } from "astro:content";
 changeLanguage("ja");
 
 export async function getStaticPaths() {
-    const posts = await getSinglePage("portfolio");
+    const posts = await getSinglePage("portfolioJa");
     const totalPages = Math.ceil(posts.length / config.settings.pagination);
     const paths = [];
     for (let i = 1; i < totalPages; i++) {
