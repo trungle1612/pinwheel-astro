@@ -6,6 +6,7 @@ import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 const { summary_length } = config.settings;
+import i18next from "i18next";
 
 type Props = {
   posts: CollectionEntry<"portfolio">[];
@@ -27,7 +28,13 @@ const { posts } = Astro.props;
           />
           <div class="card-content">
             <h3 class="h4 card-title">
-              <a href={`/portfolio/${item.id}`}>{item.data.title}</a>
+              {i18next.language === "ja" ? (
+                <a href={`/ja/portfolio/${item.id.replace("ja/", "")}`}>
+                  {item.data.title}
+                </a>
+              ) : (
+                <a href={`/portfolio/${item.id}`}>{item.data.title}</a>
+              )}
             </h3>
 
             {item.body && (

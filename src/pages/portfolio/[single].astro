@@ -1,20 +1,21 @@
 ---
+import { changeLanguage } from "i18next";
 import Base from "@/layouts/Base.astro";
 import PortfolioSingle from "@/layouts/PortfolioSingle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
+changeLanguage("vi");
+
 export async function getStaticPaths() {
-  const posts = await getSinglePage("portfolio");
-
-  const paths = posts.map((post) => ({
-    params: {
-      single: post.id,
-    },
-    props: { post },
-  }));
-  return paths;
+    const posts = await getSinglePage("portfolio");
+    const paths = posts.map((post) => ({
+        params: {
+            single: post.id,
+        },
+        props: { post },
+    }));
+    return paths;
 }
-
 const { post } = Astro.props;
 const { title, meta_title, description, image } = post.data;
 ---

@@ -1,26 +1,27 @@
 ---
+import { changeLanguage } from "i18next";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
 import Default from "@/layouts/Default.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 
+changeLanguage("vi");
+
 export async function getStaticPaths() {
-  const pages = await getSinglePage("pages");
-
-  const paths = pages.map((page: any) => ({
-    params: {
-      regular: page.slug,
-    },
-    props: { page },
-  }));
-  return paths;
+    const pages = await getSinglePage("pages");
+    const paths = pages.map((page: any) => ({
+        params: {
+            regular: page.slug,
+        },
+        props: { page },
+    }));
+    return paths;
 }
-
 const { page } = Astro.props;
 const { title, meta_title, description, image } = page.data;
 const page_data = {
-  ...page.data,
+    ...page.data,
 };
 ---
 

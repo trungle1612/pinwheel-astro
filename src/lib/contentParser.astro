@@ -4,6 +4,7 @@ import {
   type CollectionEntry,
   type CollectionKey,
 } from "astro:content";
+import i18next from "i18next";
 
 type PageData = {
   title: string;
@@ -18,7 +19,15 @@ export const getSinglePage = async <C extends CollectionKey>(
 ): Promise<CollectionEntry<C>[]> => {
   const allPages = await getCollection(collectionName);
 
-  const removeIndex = allPages.filter((data) => data.id.match(/^(?!-)/));
+  let removeIndex = allPages.filter((data) => data.id.match(/^(?!-)/));
+
+
+  // if i18next.language is ja, remove the index_ja
+  if (i18next.language === "ja") {
+    removeIndex = allPages.filter((data) => data.id.match(/^ja\/post-\d+/));
+  } else {
+    removeIndex = allPages.filter((data) => data.id.match(/^post-\d+$/));
+  }
 
   const removeDrafts = removeIndex.filter((data) => {
     const pageData = data.data as PageData;
