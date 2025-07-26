@@ -21,11 +21,15 @@ export const getSinglePage = async <C extends CollectionKey>(
 
   let removeIndex = allPages.filter((data) => data.id.match(/^(?!-)/));
 
-
-  // if i18next.language is ja, remove the index_ja
-  if (i18next.language === "ja") {
+  // Handle different collection types
+  if (collectionName === "portfolioJa") {
+    // For portfolioJa collection, filter for post-\d+ pattern (not ja/post-\d+)
+    removeIndex = allPages.filter((data) => data.id.match(/^post-\d+$/));
+  } else if (i18next.language === "ja") {
+    // For other collections when language is ja, filter for ja/post-\d+ pattern
     removeIndex = allPages.filter((data) => data.id.match(/^ja\/post-\d+/));
   } else {
+    // For default language, filter for post-\d+ pattern
     removeIndex = allPages.filter((data) => data.id.match(/^post-\d+$/));
   }
 
