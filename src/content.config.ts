@@ -187,6 +187,24 @@ const portfolioCollection = defineCollection({
   }),
 });
 
+const portfolioJaCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "src/content/portfolio/ja" }),
+  schema: z.object({
+    title: z.string(),
+    page_title: z.string().optional(),
+    subtitle: z.string().optional(),
+    meta_title: z.string().optional(),
+    description: z.string().optional(),
+    date: z.date().optional(),
+    image: z.string().optional(),
+    author: z.string().optional(),
+    categories: z.array(z.string()).default(["others"]),
+    draft: z.boolean().optional(),
+    featured: z.boolean().optional(),
+  }),
+});
+
+
 // Features collections schema
 const featuresCollection = defineCollection({
   loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/features" }),
@@ -435,6 +453,7 @@ export const collections = {
   about: aboutCollection,
   blog: blogCollection,
   portfolio: portfolioCollection,
+  portfolioJa: portfolioJaCollection,
   features: featuresCollection,
   "how-it-works": howItWorksCollection,
   contact: contactCollection,

@@ -12,10 +12,11 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 changeLanguage("ja");
 
-const portfolioIndex = (await getEntry("portfolio", "-index_ja")) as CollectionEntry<"portfolio">;
+const portfolioIndex = (await getEntry("portfolio", "-index")) as CollectionEntry<"portfolio">;
 const posts = await getSinglePage("portfolio");
 const sortedPosts = sortByDate(posts);
 const featuredPost = sortedPosts.filter((item) => item.data.featured);

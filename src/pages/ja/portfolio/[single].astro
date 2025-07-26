@@ -7,7 +7,7 @@ import { getSinglePage } from "@/lib/contentParser.astro";
 changeLanguage("ja");
 
 export async function getStaticPaths() {
-    const posts = await getSinglePage("portfolio");
+    const posts = await getSinglePage("portfolioJa");
     const paths = posts.map((post) => ({
         params: {
             single: post.id,
